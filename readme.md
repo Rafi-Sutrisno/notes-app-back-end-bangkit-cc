@@ -1,7 +1,7 @@
-// Cross-Origin Resource Sharing (CORS).
-// nodemon (tidak perlu ulang npm run start)
-// ESLint (mengevaluasi tulisan)
-// nanoid (random unique string for id)
+// Cross-Origin Resource Sharing (CORS).<br>
+// nodemon (tidak perlu ulang npm run start)<br>
+// ESLint (mengevaluasi tulisan)<br>
+// nanoid (random unique string for id)<br>
 
 Kriteria :
 
@@ -46,4 +46,28 @@ host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
 - pada package.json tambahkan kode tersebut pada "scripts"
 ```json
 "start-prod": "NODE_ENV=production node ./src/server.js",
+```
+- server berhasil dijalankan
+- cara menggunakan server ini adalah dengan masuk ke http://notesapp-v1.dicodingacademy.com/
+- lalu tekan Change URl dan masukkan URL web server terbaru
+- agar server bisa berjalan secara terus menerus gunakan Process Manager
+```
+npm install -g pm2
+```
+```
+pm2 start npm --name "notes-api" -- run "start-prod"
+```
+<br><br/>
+Process Manager :
+- restart :
+```
+pm2 restart notes-api
+```
+- delete :
+```
+pm2 stop notes-api
+```
+- run again :
+```
+pm2 start notes-api
 ```
